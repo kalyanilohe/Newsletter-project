@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/", function(req,res){
 	res.sendFile(__dirname + "/signup.html");
-})
+});
 
 app.post("/", function(req,res){
 
@@ -40,7 +40,7 @@ const url="https://us17.api.mailchimp.com/3.0/lists/a12186d157";
 
 const options = {
 	method : "POST",
-	auth : "kalyani:a102da5de98332e0a33092b18e18017dc-us17"
+	auth : "kalyani:6b9558ea383ee316a41275e071b48520-us17"
 }
 
 const request =https.request(url, options, function(response){
@@ -67,7 +67,7 @@ app.post("/failure", function(req,res){
 	res.redirect("/");
 });
 
-app.listen(process.env.PORT || 4000, Function(){
+app.listen(process.env.PORT || 4000, function(){
 	console.log("server is running at port 4000");
 });
 
