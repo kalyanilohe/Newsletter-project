@@ -18,6 +18,7 @@ app.post("/", function(req,res){
 const firstName=req.body.fName;
 const lastName=req.body.lName;
 const email=req.body.email;
+const port=process.env.PORT || 4000;
 
 const data =
 {
@@ -67,7 +68,7 @@ app.post("/failure", function(req,res){
 	res.redirect("/");
 });
 
-app.listen(process.env.PORT || 4000, function(){
+app.listen(port, function(){
 	console.log("server is running at port 4000");
 });
 
